@@ -1,49 +1,68 @@
 import java.util.*;
 public class Calculator {
-	Stack<String> mystack=new Stack<String>();
+	private final Stack<Integer> mystack=new Stack<>();
 	
-	Calculator(){
-		
-	}
-
 	public void loadConstant(int i) {
 		// TODO Auto-generated method stub
-		String myvalue=Integer.toString(i);
-		mystack.push(myvalue);
+		this.mystack.push(i);
 		
 	}
 
 	public void add() {
 		// TODO Auto-generated method stub
+		int b=mystack.pop();
+		int a=mystack.pop();
+		mystack.push(a+b);
 		
 	}
 
 	public void subtract() {
 		// TODO Auto-generated method stub
+		int b=mystack.pop();
+		int a=mystack.pop();
+		mystack.push(a-b);
 		
+
 	}
 
 	public void multiply() {
 		// TODO Auto-generated method stub
+		int b=mystack.pop();
+		int a=mystack.pop();
+		mystack.push(a*b);
+		
 		
 	}
 
 	public void divide() {
 		// TODO Auto-generated method stub
+		int b=mystack.pop();
+		int a=mystack.pop();
+		mystack.push(a/b);
+		
 		
 	}
 
 	public void total() {
 		// TODO Auto-generated method stub
+		int total=0;
+		while(!mystack.isEmpty()) {
+			total+=mystack.pop();
+		}
+		mystack.push(total);
 		
 	}
 	public String toString() {
-	if (mystack.empty()) {
-		return  "[].";
-	}
-	else {
-		return "[].";
-	}
+		String result="[";
+		String glue="";
+		for(int number:mystack) {
+			result+=glue;
+			result+=number;
+			glue=" ";}
+		result+="].";
+		return result;
+			
+		}
 	}
 
-}
+

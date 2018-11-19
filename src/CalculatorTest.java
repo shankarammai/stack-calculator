@@ -29,7 +29,7 @@ public class CalculatorTest {
         calc.loadConstant(4);
         calc.add();
         assertEquals("[9].", calc.toString());
-        calc.loadConstant(3);
+       calc.loadConstant(3);
         calc.add();
         assertEquals("[12].", calc.toString());
     }
